@@ -3,9 +3,9 @@
 A public storefront demo on hev layer over Amazon Reviews 2023 product data:
 semantic product search, visually similar recommendations and product detail,
 backed by CLIP image vectors that a two-stage Layer pipeline writes into
-`amazon-products`. shop has no RFC of its own; the Layer features it exercises
-(Pipelines, Functions, trending reduce in RFC 0040) are specified in
-`../layer-pro/docs/rfcs/`. `README.md` is the public tour.
+`amazon-products`. shop has no RFC of its own; its trending surface follows
+`../layer-pro/docs/rfcs/0040-trending-searches-reduce-udfs.md`. `README.md` is
+the public tour.
 
 **This repo is public.** Never put client names, client systems or anything
 from a client engagement in code, comments, docs or commit messages.
@@ -22,15 +22,16 @@ The demo working is table stakes; the report is the deliverable.
 - **Read the docs, don't invent API.** Request and response shapes are in
   `../layer-pro/site/src/content/docs/` (public: https://hevlayer.com/docs)
   and `../layer-pro/apps/layer-gateway/openapi.yaml`.
-- **Report friction in Linear** (team `layer`): a bug or a wrong or missing
-  doc is an issue; a missing capability is an RFC in `../layer-pro/docs/rfcs/`
-  with this workload as the motivating case. Drift between what the SDK and
+- **Report friction in Linear** with the `linear` CLI: a bug or a wrong or
+  missing doc is an issue on team `LYR`; a capability gap is an RFC, written
+  as a Linear project with an `RFC: <name>` document (not a numbered file in
+  `../layer-pro/docs/rfcs/`), with this workload as the motivating case. Drift between what the SDK and
   the `Pipeline` YAML can express is a Layer bug, not something to work
   around here.
 - **Layer operates itself.** Autoscaling, scale-to-zero and scheduling are
   Layer's job; don't hand-tune them. If you must intervene to keep the demo
   up (shop shares `layer-prod` with the other demos), the intervention gets
-  a Linear issue too.
+  a `LYR` issue too.
 
 ## Layout and boundaries
 
